@@ -46,6 +46,8 @@ You can then run the wget script to download the video files:
 wget.sh
 ```
 
+made this since i was too lazy to do it manually 
+
 ## Note
 
 Please ensure that the structure of the HTML you're parsing matches your expectations, as BeautifulSoup relies on the specific structure of the HTML.
