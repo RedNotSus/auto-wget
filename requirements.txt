@@ -1,0 +1,9 @@
+requests
+bs4
+re
+fs
+colorama
+rich
+pyfiglet
+time
+os
