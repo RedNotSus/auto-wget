@@ -21,12 +21,12 @@ print(f"[yellow][ AUTO-WGET ]  |  Please enter the URL of the website you want t
 url = input()
 
 print(f"[yellow]p AUTO-WGET ]  |  Scraping website...")
-file = open(wget.sh, "a")
+file = open("wget.sh", "a")
 
 source = requests.get(url).text
 episodes = 0
 
-soup = BeautifulSoup(source, 'html.par=-ser')
+soup = BeautifulSoup(source, 'html.parser')
 name_divs = soup.find_all('div', class_='centerflex name-div')
 
 for div in name_divs:
