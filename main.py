@@ -8,11 +8,13 @@ import pyfiglet
 import time
 import os
 
-# Vanity
+
+# gotta make it look cool
 if os.name == 'nt': 
     os.system('cls')
 else:
     os.system('clear')
+
 title = pyfiglet.figlet_format('AUTO-WGET', font='puffy', justify="center")
 print(f'[bold magenta]{title}[/bold magenta]')
 print(f'[green]Created by [/green][bold cyan]Rednotsus[/bold cyan]')
@@ -24,7 +26,10 @@ print(f"[yellow][ AUTO-WGET ]  |  Please enter the URL of the website you want t
 url = input()
 
 print(f"[yellow][ AUTO-WGET ]  |  Scraping website...")
-file = open("wget.sh", "a")
+
+wget_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'wget.sh')
+
+file = open(wget_path, "a")
 
 source = requests.get(url).text
 episodes = 0
@@ -62,19 +67,10 @@ for div in name_divs:
 gbsize = round(totalmb/1024, 2)
 elapsed_time = float(time.time() - start_time)
 print()
-print(f"[yellow][ AUTO-WGET ]  |  Generated wget script at wget.sh")
+print(f"[yellow][ AUTO-WGET ]  |  Generated wget script at {os.path.dirname(os.path.abspath(__file__))}/wget.sh")
 print()
 time.sleep(0.5)
 print(f"[green][ AUTO-WGET ]  |  Done, Completed in {elapsed_time} seconds")
 print(f"[green][ AUTO-WGET ]  |  Total Size for {episodes} episodes: {gbsize} GB")
-print(f"[green][ AUTO-WGET ]  |  Press enter to quit...")
-input(f"    >    ")
-if input() == " ":
-    if os.name == 'nt': 
-        os.system('cls')
-    else:
-        os.system('clear')
-    time.sleep(0.5)
-    exit()
-
 file.close()
+
