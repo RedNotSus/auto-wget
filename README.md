@@ -16,6 +16,7 @@ This script requires the following Python libraries:
 - requests
 - BeautifulSoup
 - re
+- fs
 - os
 - colorama
 - rich
@@ -25,7 +26,7 @@ This script requires the following Python libraries:
 You can install these libraries using pip:
 
 ```bash
-pip install requests beautifulsoup4 colorama rich pyfiglet
+pip install requests beautifulsoup4 colorama rich pyfiglet fs
 ```
 
 ## Usage
